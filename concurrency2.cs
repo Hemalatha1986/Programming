@@ -5,7 +5,7 @@ namespace concuurency1
 {
     class Program
     {
-        
+
         static void Main(string[] args)
         {
             Taskmethod1();
@@ -19,18 +19,18 @@ namespace concuurency1
         }
 
 
-        private static void Taskmethod1()
-                {
-                Task.Delay(20000).Wait();
-                Console.WriteLine("Task 1 ");
-            }
+        private static async void Taskmethod1()
+        {
+            await Task.Delay(20000).Wait();
+            Console.WriteLine("Task 1 ");
+        }
 
-            private static void Taskmethod2()
-            {
-            Task.Delay(20000).Wait();
+        private static async void Taskmethod2()
+        {
+            await Task.Delay(20000).Wait();
             Console.WriteLine("Task 2 ");
-            }
-            
-        
+        }
+
+
     }
 }
