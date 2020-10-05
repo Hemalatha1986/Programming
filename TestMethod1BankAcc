@@ -1,0 +1,17 @@
+//Creating TestMethod1
+[TestMethod]
+public void Debit_WithValidAmount_UpdatesBalance()
+{
+    // Arrange
+    double beginningBalance = 14.99;
+    double debitAmount = 4.99;
+    double expected = 10.00;
+    BankAccount account = new BankAccount("Peter", beginningBalance);
+
+    // Act
+    account.Debit(debitAmount);
+
+    // Assert
+    double actual = account.Balance;
+    Assert.AreEqual(expected, actual, 0.001, "Account not debited correctly");
+}
